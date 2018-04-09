@@ -81,14 +81,6 @@ class TopicController {
     }
 
 
-    /*def demo1(ResourceSearchCO co,Long id){
-//        ResourceSearchCO co = new ResourceSearchCO(topicId: id)
-        co.setTopicId(id)
-        List resource = Resource.search(co).list()
-        println(resource)
-        render("${resource} ${co.topicId}")
-    }*/
-
     def showSubscribedUsers(){
         Topic topic = Topic.findById(1)
         render(view: 'showSubscribedUsers' , model: [userList : topic.getSubscribedUsers()])
