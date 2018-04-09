@@ -60,7 +60,6 @@ class TopicController {
     }
 
     def save(String topic,String visibility){
-//        User user =User.findByFirstName("sankalp")
         User user = User.findById(session.userId.toLong())
         if(user){
             println(visibility)
