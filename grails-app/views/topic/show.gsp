@@ -20,7 +20,7 @@
     <div class="col-lg-6">
         <div class="col-lg-12">
             <div class=" panel panel-default     ">
-                <div class="panel-heading " style="background: #007efc">
+                <div class="panel-heading " style="background: salmon">
                     <p>
 
                     <h3 style="color:white">Topic:"${topicVO.topicName}"</h3></p>

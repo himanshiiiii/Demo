@@ -1,5 +1,5 @@
 <div class=" panel panel-default     ">
-    <div class="panel-heading " style="background: #007efc">
+    <div class="panel-heading " style="background: salmon">
         <p>
 
         <h3 style="color:white">Recent Shares</h3></p>

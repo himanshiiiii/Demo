@@ -1,6 +1,6 @@
 <%@ page import="domainLinksharing.Resource" %>
 <div class="panel panel-primary ">
-    <div class="panel-heading">
+    <div class="panel-heading" style="background: salmon">
         <h3 class="panel-title">
             Trending topics
         </h3>
