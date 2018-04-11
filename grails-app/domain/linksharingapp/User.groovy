@@ -35,7 +35,7 @@ class User {
         this.active = active
     }
     static constraints = {
-        email(email: true,nullable: false,blank: false,unique: true)//Nullable : Allows a property to be set to null - defaults to false.
+        email(email: true,nullable: false,blank: false,unique: true)
         password(nullable: false,blank: false,minSize: 5 ,validator: { password, obj ->
                         def password2 = obj.confirmPassword
                         password == password2 ? true : ['invalid.matchingpasswords']
@@ -52,7 +52,6 @@ class User {
 
     static mapping = {
         sort id: 'desc'
-//        topics batchSize: 2
         subscriptions fetch: 'join'
         readingItems fetch: 'join'
         topics fetch: 'join'

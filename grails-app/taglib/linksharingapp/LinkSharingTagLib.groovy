@@ -4,9 +4,6 @@ import vo.TopPostVO
 import vo.TopicVO
 
 class LinkSharingTagLib {
-    static defaultEncodeAs = "raw"
-//    static defaultEncodeAs = [taglib:'html']
-//    static encodeAsForTags = [tagName: [taglib:'html'], otherTagName: [taglib:'none']]
     static namespace = "ls"
 
     def checkRead = { attrs, body ->
@@ -32,8 +29,6 @@ class LinkSharingTagLib {
 
     def getTopPosts = {
         List<TopPostVO> topPostVOList = Resource.getTopPosts()
-//        out << <g:render template="topPosts" var="demo" collection="${lists}"></g:render>
-//        out << render(template: 'topPosts',collection: topPostVOList,var: 'demo')
         out << g.render(template: '/logIn/topPosts', collection: topPostVOList, var: 'demo')
     }
 

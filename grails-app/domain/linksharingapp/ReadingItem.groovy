@@ -2,8 +2,8 @@ package linksharingapp
 
 class ReadingItem {
 
-    Resource resource
     User user
+    Resource resource
     Boolean isRead
     Date dateCreated
     Date lastUpdated

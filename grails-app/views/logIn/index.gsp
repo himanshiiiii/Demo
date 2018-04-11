@@ -65,9 +65,9 @@
 
                             <div class="text">
                                 <p>
-                                    Wikiversity Free course materials · Wikiquote Free quote compendium ·
-                                    MediaWiki Free & open wiki application · Wikisource Free library ·
-                                    Wikispecies Free species directory · Meta-Wiki Community coordination & documentation.
+                                    Grails is an open source web application framework that uses the Apache Groovy programming language
+                                    It is intended to be a high-productivity framework by following the "coding by convention" paradigm.
+                                    providing a stand-alone development environment and hiding much of the configuration detail from the developer.
                                 </p>
                             </div>
 

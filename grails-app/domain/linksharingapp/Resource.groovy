@@ -11,7 +11,6 @@ abstract class Resource {
     Topic topic
     Date dateCreated
     Date lastUpdated
-    //createdBy description topic already created
     static belongsTo = [createdBy:User,topic:Topic]
     static hasMany = [ratings:ResourceRating, readingItems:ReadingItem]
     static constraints = {
@@ -19,7 +18,6 @@ abstract class Resource {
     }
 
     static mapping = {
-//        topic fetch: 'join'
         topic lazy: false
         createdBy lazy: false
         readingItems lazy: false
@@ -90,7 +88,6 @@ abstract class Resource {
     }
 
     static String findTypeOfResource(Long id){
-//        LinkResource linkResource = Resource.findById(id)
         Resource resource = Resource.findById(id)
         if(resource.class == LinkResource.class){
             return "LinkResource"

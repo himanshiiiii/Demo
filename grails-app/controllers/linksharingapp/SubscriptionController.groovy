@@ -15,7 +15,6 @@ class SubscriptionController {
             redirect(controller : 'logIn',action: 'index')
         }else {
             flash.error = "Subscription not saved."
-//            render("${subscription.errors.allErrors}")
             redirect(controller : 'logIn',action: 'index')
         }
 
@@ -50,8 +49,8 @@ class SubscriptionController {
                 flash.message = "subscription deleted successfully"
                 redirect(controller : 'logIn',action: 'index')
             }catch (RuntimeException ex){
-                flash.error = "error while deleting subscription ${subscription.errors.allErrors} ${subscription}"
-                render("error while deleting subscription ${subscription.errors.allErrors} ${subscription}")
+                flash.error = "error in deleting subscription ${subscription.errors.allErrors} ${subscription}"
+                render("error in deleting subscription ${subscription.errors.allErrors} ${subscription}")
                 redirect(controller : 'logIn',action: 'index')
             }
         }

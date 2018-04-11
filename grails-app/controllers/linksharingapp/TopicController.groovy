@@ -16,6 +16,27 @@ class TopicController {
     }
 
 
+    def save(String topic,String visibility){
+        User user = User.findById(session.userId.toLong())
+        if(user){
+            println(visibility)
+            Topic topic1 = new Topic(name: topic,createdBy: user,visibility: Visibility.isVisibility(visibility))
+            if(topic1.validate()){
+                topic1.save(flush:true)
+                flash.message = "Topic is saved ${topic1}"
+                render("Topic saved Successfully")
+            }
+            else {
+                flash.error = "topic not saved"
+                redirect(controller: 'user',action: 'index')
+            }
+        }
+        else {
+            redirect(controller: 'logIn',action: 'index')
+        }
+    }
+
+
     def show(){
         ResourceSearchCO co = new ResourceSearchCO()
         if(params.id){
@@ -30,8 +51,7 @@ class TopicController {
         List<Topic> topic = Topic.search(co).list()
         log.info("${topic}")
         if (!topic) {
-            flash.error = "NO SUCH TOPIC"
-//            render("${params}")
+            flash.error = " no topic found"
             redirect(controller: 'logIn', action: 'index')
         }
         else {
@@ -59,35 +79,7 @@ class TopicController {
         render("Topic Deleted Successfully")
     }
 
-    def save(String topic,String visibility){
-        User user = User.findById(session.userId.toLong())
-        if(user){
-            println(visibility)
-            Topic topic1 = new Topic(name: topic,createdBy: user,visibility: Visibility.isVisibility(visibility))
-            if(topic1.validate()){
-                topic1.save(flush:true)
-                flash.message = "Topic is saved ${topic1}"
-                render("Topic saved Successfully")
-            }
-            else {
-                flash.error = "topic not saved"
-//            render("Error while saving topic ${topic1} ${topic1.errors.allErrors}")
-                redirect(controller: 'user',action: 'index')
-            }
-        }
-        else {
-            redirect(controller: 'logIn',action: 'index')
-        }
-    }
 
-
-    /*def demo1(ResourceSearchCO co,Long id){
-//        ResourceSearchCO co = new ResourceSearchCO(topicId: id)
-        co.setTopicId(id)
-        List resource = Resource.search(co).list()
-        println(resource)
-        render("${resource} ${co.topicId}")
-    }*/
 
     def showSubscribedUsers(){
         Topic topic = Topic.findById(1)

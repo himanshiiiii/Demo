@@ -18,7 +18,7 @@
         <div class="page-header well">
             <span>
 
-                <a class="text-primary" href="#" style="text-decoration: underline">Link Sharing</a>
+                <a class="text-primary" href="#" style="text-decoration: underline">LinkSharing</a>
 
             </span>
             <g:form class="search" url="[controller:'resource',action:'searchResource']">
@@ -36,7 +36,7 @@
         <div class="col-lg-4">
             <span>
 
-                <a class="text-primary" href="#" style="text-decoration: underline">Link Sharing</a>
+                <a class="text-primary" href="#" style="text-decoration: underline">LinkSharing</a>
 
             </span>
         </div>

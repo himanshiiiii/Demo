@@ -25,7 +25,7 @@ class ResourceRatingController {
             }
         }
         else {
-            flash.error = "Please LogIn to vote"
+            flash.error = "you have to login"
             redirect(controller : 'logIn' , action : 'index')
         }
     }

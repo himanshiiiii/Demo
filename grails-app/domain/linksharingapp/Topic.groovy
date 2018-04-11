@@ -39,18 +39,6 @@ class Topic {
         }
     }
 
-    def afterInsert(){
-        Topic.withNewSession {
-            Subscription subscription = new Subscription(this,this.createdBy,Seriousness.VERY_SERIOUS)
-            if (subscription.save(flush:true)){
-                log.info("Subscription saved successfully - ${this.addToSubscriptions(subscription)}")
-            }
-            else {
-                log.info("Subscription has errord while saving - ${subscription.hasErrors()}")
-            }
-        }
-    }
-
     static List<TopicVO> getTrendingTopics(){
         List<TopicVO> topicVOList = Resource.createCriteria().list {
             projections{
@@ -95,6 +83,20 @@ class Topic {
         }
         else {
             return false
+        }
+    }
+
+
+
+    def afterInsert(){
+        Topic.withNewSession {
+            Subscription subscription = new Subscription(this,this.createdBy,Seriousness.VERY_SERIOUS)
+            if (subscription.save(flush:true)){
+                log.info("Subscriptions saved successfully - ${this.addToSubscriptions(subscription)}")
+            }
+            else {
+                log.info(" Error in saving Subscription - ${subscription.hasErrors()}")
+            }
         }
     }
 

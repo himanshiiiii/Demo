@@ -14,7 +14,6 @@ class LinkResourceController {
             if(linkResource.validate()){
                 linkResource.save()
                 flash.message = "Resource saved successfully"
-//                render("successful")
                 redirect(controller:'user',action : 'index')
             }
             else {

@@ -45,15 +45,14 @@ class ResourceController {
                 user.removeFromResources(resource)
             }
             resource.topic.removeFromResources(resource)
-//                println("after topic.resources"+resource.topic.resources.size())
-            ReadingItem.executeUpdate("delete from ReadingItem where resource_id=:id", [id: resource.id])
-            ResourceRating.executeUpdate("delete from ResourceRating where resource_id=:id", [id: resource.id])
-            Resource.executeUpdate("delete from Resource where id=:id", [id: resource.id])
+            ReadingItem.executeUpdate(" ReadingItem is deleted where resource_id=:id", [id: resource.id])
+            ResourceRating.executeUpdate("ResourceRating is deleted where resource_id=:id", [id: resource.id])
+            Resource.executeUpdate("Resource is deleted where id=:id", [id: resource.id])
             flash.message = "Resource deleted successfully"
             redirect(controller: 'logIn', action: 'index')
         }
         catch (RuntimeException ex) {
-            flash.error = "Resource not deleted"
+            flash.error = "Resource is not  deleted"
             redirect(controller: 'logIn', action: 'index')
         }
     }
@@ -79,7 +78,6 @@ class ResourceController {
     def showResources(Long id) {
         Resource resource = Resource.findById(id)
         RatingInfoVO ratingInfoVO = resource.method()
-//        render("${ratingInfoVO.totalVotes} ${ratingInfoVO.averageScore} ${ratingInfoVO.totalScore}")
         render("hello")
     }
 
