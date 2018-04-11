@@ -157,10 +157,4 @@ grails:
 file:
     uploadLocation: "/home/himanshi/Desktop/Project/GrailsProject/linksharing/grails-app/assets"
 
-#environments:
-#    development:
-#        uploadFolder: "/home/pushkar/GrailsProject/linksharing/grails-app/assets"
-#    test:
-#        uploadFolder: "/home/pushkar/GrailsProject/linksharing/grails-app/assets"
-#    production:
-#        uploadFolder: "/home/pushkar/GrailsProject/linksharing/grails-app/assets"
+
