@@ -1,5 +1,5 @@
 <div class="panel panel-primary ">
-    <div class="panel-heading"><h3 class="panel-title">
+    <div class="panel-heading" style="background: salmon"><h3 class="panel-title">
         Subscriptions
         %{--<a href="#" class="pull-right">View All</a>--}%
     </h3></div>

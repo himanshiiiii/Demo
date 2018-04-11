@@ -1,7 +1,7 @@
 <div class="col-lg-12 " style="margin-top: 25px">
 
     <div class=" panel panel-default  ">
-        <div class="panel-heading " style="background:#007efc">
+        <div class="panel-heading " style="background:salmon">
             <h3 style="color:white">Login</h3>
         </div>
 

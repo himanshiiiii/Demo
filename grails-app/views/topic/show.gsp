@@ -20,7 +20,7 @@
     <div class="col-lg-6">
         <div class="col-lg-12">
             <div class=" panel panel-default     ">
-                <div class="panel-heading " style="background: #007efc">
+                <div class="panel-heading " style="background: salmon">
                     <p>
 
                     <h3 style="color:white">Topic:"${topicVO.topicName}"</h3></p>
@@ -43,7 +43,7 @@
                                             class="text-muted">@${topicVO.ownerUsername}</small>
                                     <g:if test="${session.user}">
                                         <% domainLinksharing.Topic topic = domainLinksharing.Topic.findById(topicVO.topicId)
-                                        subscription.Subscription subscription = domainLinksharing.Subscription.findByUserAndTopic(session.user, topic) %>
+                                        Subscription subscription = domainLinksharing.Subscription.findByUserAndTopic(session.user, topic) %>
                                         <g:if test="${subscription}">
                                             <g:link controller="subscription" action="delete"
                                                     params="${[topicId: topicVO.topicId]}">Unsubscribe</g:link>

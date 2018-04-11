@@ -1,5 +1,5 @@
 <div class=" panel panel-default     ">
-    <div class="panel-heading  col-lg-12" style="background: #007efc">
+    <div class="panel-heading  col-lg-12" style="background: salmon">
         <h3 style="color:white " class="col-lg-8">Top Posts</h3>
 
 

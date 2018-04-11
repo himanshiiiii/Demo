@@ -1,7 +1,7 @@
 <%@ page import="co.SearchCO" %>
 <div class="col-lg-6">
     <div class="panel panel-primary ">
-        <div class="panel-heading">Inbox</div>
+        <div class="panel-heading" style="background: salmon">Inbox</div>
         <g:each in="${unReadResourcesList}" var="unReadResources">
             <div class="panel-body">
                 <div class="col-lg-12">
