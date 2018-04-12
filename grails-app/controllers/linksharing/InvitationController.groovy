@@ -17,7 +17,7 @@ class InvitationController {
 
             to "${params.recieverEmail}"
             subject "Regarding Invitation For Topic : ${params.topicName}"
-            text """Hey checkout this interesting topic I came across. 
+            text """send mail 
 <a href = "${createLink(controller: 'subscription', action: 'subscribeThroughEmail', id: params.topicName)}">Click Here</a>
 """
         }
