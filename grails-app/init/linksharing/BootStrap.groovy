@@ -111,40 +111,6 @@ class BootStrap {
             log.error("Error while saving : $user4")
         }
 
-//        User user5 = new User()
-//        user5.firstname = "Ajay"
-//        user5.lastname = "Jodha"
-//        user5.username = "ajay.jodha"
-//        user5.password = "ajay1234"
-//        user5.confirmpassword = "ajay1234"
-//        user5.email = "ajay.jodha@tothenew.com"
-//        user5.photo = null
-//        user5.admin = false
-//        user5.active = false
-//        if (user5.save(flush: true)) {
-//            log.info("Saved Successfully : $user5")
-//        } else {
-//            log.error("Error while saving : $user5")
-//        }
-//
-//        User user6 = new User()
-//        user6.firstname = "Rahul"
-//        user6.lastname = "Babu"
-//        user6.username = "rahul.babu"
-//        user6.password = "rahul"
-//        user6.confirmpassword = "rahul"
-//        user6.email = "rahul.babu@tothenew.com"
-//        user6.photo = null
-//        user6.admin = false
-//        user6.active = true
-//        if (user6.save(flush: true)) {
-//            log.info("Saved Successfully : $user6")
-//        } else {
-//            log.error("Error while saving : $user6")
-//        }
-
-//Topics-
-
         Topic topic1 = new Topic(name: "Photography", visibility: Visibility.PUBLIC, createdBy: user1)
         if (topic1.save(flush: true)) {
             log.info("Saved Successfully : $topic1")
@@ -269,61 +235,6 @@ class BootStrap {
         } else {
             log.error("Error while saving- $subscription4")
         }
-
-//        Subscription subscription5 = new Subscription(user: user3, topic: topic7, seriousness: Seriousness.SERIOUS)
-//        if (subscription5.save(flush: true)) {
-//            log.info("Saved Successfully : $subscription5")
-//            topic7.addToSubscriptions(subscription5)
-//            user3.addToSubscriptions(subscription5)
-//        } else {
-//            log.error("Error while saving- $subscription5")
-//        }
-//
-//        Subscription subscription6 = new Subscription(user: user3, topic: topic8, seriousness: Seriousness.VERYSERIOUS)
-//        if (subscription6.save(flush: true)) {
-//            log.info("Saved Successfully : $subscription6")
-//            topic8.addToSubscriptions(subscription6)
-//            user3.addToSubscriptions(subscription6)
-//        } else {
-//            log.error("Error while saving- $subscription6")
-//        }
-//
-//        Subscription subscription7 = new Subscription(user: user4, topic: topic9, seriousness: Seriousness.VERYSERIOUS)
-//        if (subscription7.save(flush: true)) {
-//            log.info("Saved Successfully : $subscription7")
-//            topic9.addToSubscriptions(subscription7)
-//            user4.addToSubscriptions(subscription7)
-//        } else {
-//            log.error("Error while saving- $subscription7")
-//        }
-//
-//        Subscription subscription8 = new Subscription(user: user4, topic: topic10, seriousness: Seriousness.VERYSERIOUS)
-//        if (subscription8.save(flush: true)) {
-//            log.info("Saved Successfully : $subscription8")
-//            topic10.addToSubscriptions(subscription8)
-//            user4.addToSubscriptions(subscription8)
-//        } else {
-//            log.error("Error while saving- $subscription8")
-//        }
-
-//        Subscription subscription9 = new Subscription(user: user5, topic: topic1, seriousness: Seriousness.CASUAL)
-//        if (subscription9.save(flush: true)) {
-//            log.info("Saved Successfully : $subscription9")
-//            topic1.addToSubscriptions(subscription9)
-//            user5.addToSubscriptions(subscription9)
-//        } else {
-//            log.error("Error while saving- $subscription9")
-//        }
-//
-//        Subscription subscription10 = new Subscription(user: user5, topic: topic2, seriousness: Seriousness.CASUAL)
-//        if (subscription10.save(flush: true)) {
-//            log.info("Saved Successfully : $subscription10")
-//            topic2.addToSubscriptions(subscription10)
-//            user5.addToSubscriptions(subscription10)
-//        } else {
-//            log.error("Error while saving- $subscription10")
-//        }
-
 
     }
 
