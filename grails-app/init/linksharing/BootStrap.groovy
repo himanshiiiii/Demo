@@ -182,24 +182,6 @@ class BootStrap {
             log.error("Error while saving- $topic8")
         }
 
-//
-//        Topic topic9 = new Topic(name: "BeautyPlus", visibility: Visibility.PUBLIC, createdBy: user5)
-//        if (topic9.save(flush: true)) {
-//            log.info("Saved Successfully : $topic9")
-//            user5.addToTopics(topic9)
-//        } else {
-//            log.error("Error while saving- $topic9")
-//        }
-//
-//
-//        Topic topic10 = new Topic(name: "", visibility: Visibility.PRIVATE, createdBy: user5)
-//        if (topic10.save(flush: true)) {
-//            log.info("Saved Successfully : $topic10")
-//            user5.addToTopics(topic10)
-//        } else {
-//            log.error("Error while saving- $topic10")
-//        }
-
         Subscription subscription1 = new Subscription(user: user1, topic: topic3, seriousness: Seriousness.SERIOUS)
         if (subscription1.save(flush: true)) {
             log.info("Saved Successfully : $subscription1")
