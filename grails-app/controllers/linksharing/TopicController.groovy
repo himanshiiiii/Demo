@@ -16,7 +16,7 @@ class TopicController {
             render(view: 'show', model: [topicVO     : infoMap.topicVO, subscribedUserList: infoMap.subscribedUserList,
                                          resourceList: infoMap.resourceList])
         } else {
-            render("SOMETHING WENT WRONG")
+            render("Wrong render")
         }
     }
 

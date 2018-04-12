@@ -18,11 +18,7 @@ class InvitationController {
             subject "Regarding Invitation For Topic : ${params.topicName}"
             text """Hey checkout this interesting topic I came across. 
 <a href = "${createLink(controller: 'subscription', action: 'subscribeThroughEmail', id: params.topicName)}">Click Here</a>
-"""
-        }
-//        render """Hey checkout this interesting topic I came across.
-//<a href = "${createLink(controller: 'subscription', action: 'subscribeThroughEmail', id: params.topicName)}">Click Here</a>
-//"""
+""" }
         flash.message= "invitation send successfully"
         redirect(controller: 'user', action: 'index')
     }

@@ -11,10 +11,10 @@ class LinkResourceController {
     def save() {
         params.createdBy=session.user
         if(resourceService.saveLinkResource(params)){
-            flash.message = "LINK RESOURCE SAVED"
+            flash.message = "Link resource save"
         }
         else{
-            flash.message = "ERROR"
+            flash.message = "errror"
         }
         redirect(controller: 'user', action: 'index')
     }

@@ -86,13 +86,11 @@ class ResourceController {
         } else {
             response.setContentType("APPLICATION/OCTET-STREAM")
             response.setHeader("Content-Disposition", "Attachment;Filename=\"${documentInstance.fileName}\"")
-            println("about to fetch filepath >>>>>>>>>>>>>>>>>>>>>>>>>>>> ")
             def file = new File(documentInstance.filepath)
             def fileInputStream = new FileInputStream(file)
             def outputStream = response.getOutputStream()
-            byte[] buffer = new byte[4096];
-            int len;
-            println("about to download >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+            byte[] buffer = new byte[4096]
+            int len
             while ((len = fileInputStream.read(buffer)) > 0) {
                 outputStream.write(buffer, 0, len);
             }

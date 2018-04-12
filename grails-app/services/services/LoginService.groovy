@@ -11,7 +11,7 @@ class LoginService {
         User checkuser = User.findByUsername(userData.username)
         Map data = [:]
         if (checkuser) {
-            data = [errors: ["A User With Same Username Already Exists"]]
+            data = [errors: ["Username Already Exists"]]
             return data
         } else {
             User user = new User(firstname: userData.firstname, lastname: userData.lastname,
