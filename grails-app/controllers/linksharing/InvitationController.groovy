@@ -14,6 +14,7 @@ class InvitationController {
         //
 
         mailService.sendMail {
+
             to "${params.recieverEmail}"
             subject "Regarding Invitation For Topic : ${params.topicName}"
             text """Hey checkout this interesting topic I came across. 

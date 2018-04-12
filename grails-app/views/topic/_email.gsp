@@ -29,7 +29,6 @@
                             </g:each>
                         </select>
                     </div>
-                    </div>
 
                     <br/>
 <br/>

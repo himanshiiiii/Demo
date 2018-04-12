@@ -13,7 +13,7 @@ class LoginController {
     def index() {
         if (session.user) {
             log.info("REDIRECTING TO USER INDEX")
-            forward(controller: "User", action: "index")
+            redirect(controller: "user", action: "index")
         } else {
             List<RecentSharesVO> recentSharesList = Resource.getRecentShares()
             List<TopPostsVO> topPostsList = Resource.getTopPost()
@@ -59,12 +59,19 @@ class LoginController {
     def forgotPassword() {
         User user = User.findByUsername(params.username)
         if (user) {
-            session.user = user
-            flash.message = "PASSWORD CHANGED SUCCESSFULLY"
-            forward(controller: 'User', action: 'index')
+            user.password = params.newPassword
+            user.confirmpassword = params.confirmNewPassword
+            if (user.save(flush: true)) {
+                log.info("Password Successfully Changed for")
+                return user
+            } else {
+                log.error("Unable To Change Password")
+                user.errors.allErrors.each { println(it) }
+                return null
+            }
         } else {
-            flash.error = "UNABLE TO CHANGE THE PASSWORD"
-            render(view: 'forgotPassword')
+            log.info("No Such User")
+            return null
         }
     }
 

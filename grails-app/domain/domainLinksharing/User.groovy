@@ -48,7 +48,8 @@ class User {
 
     static mapping = {
         sort id: 'desc'
-        subscriptions lazy: false
+        subscriptions fetch: 'join'
+        topics fetch: 'join'
     }
 
     static transients = ['name', 'confirmpassword']
