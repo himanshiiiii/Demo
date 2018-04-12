@@ -8,7 +8,7 @@ class ApplicationInterceptor {
     }
 
     boolean before() {
-        log.info("INCOMING REQUEST: ${params.toString()}")
+        log.info("Incoming Request: ${params.toString()}")
         true
     }
 

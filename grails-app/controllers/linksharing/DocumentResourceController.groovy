@@ -20,12 +20,10 @@ class DocumentResourceController {
             documentInstance.filepath = grailsApplication.config.uploadFolder + documentInstance.fileName
             documentInstance.createdBy = session.user
             documentInstance.description = params.documentResourceDescription
-            println("about to find topic >>>>>>>>>>>>>>>>>>>>>>>>>>>")
             Topic newtopic = Topic.findByName(params.topicName)
             println("topic found : >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>. $newtopic")
             documentInstance.topic = newtopic
             file.transferTo(new File(documentInstance.filepath))
-            println("about to save document >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
             if(documentInstance.save(flush:true)){
                 log.info("Document Saved Successfully : $documentInstance")
             }else{

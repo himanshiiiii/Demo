@@ -1,4 +1,4 @@
-<%@ page import="domainLinksharing.Topic; domainLinksharing.Subscription; domainLinksharing.Topic; topic.Topic; domainLinksharing.Subscription" contentType="text/html;charset=UTF-8" %>
+<%@ page import="domainLinksharing.Topic; domainLinksharing.Subscription" contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -43,7 +43,7 @@
                                             class="text-muted">@${topicVO.ownerUsername}</small>
                                     <g:if test="${session.user}">
                                         <% domainLinksharing.Topic topic = domainLinksharing.Topic.findById(topicVO.topicId)
-                                        subscription.Subscription subscription = domainLinksharing.Subscription.findByUserAndTopic(session.user, topic) %>
+                                        domainLinksharing.Subscription subscription = domainLinksharing.Subscription.findByUserAndTopic(session.user, topic) %>
                                         <g:if test="${subscription}">
                                             <g:link controller="subscription" action="delete"
                                                     params="${[topicId: topicVO.topicId]}">Unsubscribe</g:link>
