@@ -12,12 +12,11 @@ class LoginController {
 
     def index() {
         if (session.user) {
-            log.info("REDIRECTING TO USER INDEX")
             redirect(controller: "user", action: "index")
         } else {
             List<RecentSharesVO> recentSharesList = Resource.getRecentShares()
             List<TopPostsVO> topPostsList = Resource.getTopPost()
-            log.info("NO SESSION USER FOUND")
+            log.info("No user found in this session")
             render(view: 'index', model: [recentSharesList: recentSharesList, topPostsList: topPostsList])
         }
     }
@@ -29,11 +28,11 @@ class LoginController {
                 session.user = user
                 redirect(controller: "user", action: "index")
             } else {
-                flash.error = "YOUR ACCOUNT IS INACTIVE"
+                flash.error = "========Account is Not active========="
                 render(view: 'error')
             }
         } else {
-            flash.error = "INCORRECT USERNAME OR PASSWORD"
+            flash.error = "Incorrect credentials"
             redirect(controller: 'Login', action: "index")
         }
     }
@@ -44,7 +43,7 @@ class LoginController {
             flash.error = "Unable to Register User. Reason: [${data.errors}]"
             redirect(controller: 'login', action: 'index')
         } else if (data.user) {
-            flash.message = "SUCCESSFULLY REGISTERED"
+            flash.message = "==========SUCCESSFULLY REGISTERED============="
             session.username = data.user.username
             forward(controller: 'User', action: 'index')
         }
@@ -52,7 +51,7 @@ class LoginController {
 
     def logout() {
         session.invalidate()
-        flash.error = "USER LOGGED OUT"
+        flash.error = "========USER LOGGED OUT========="
         redirect(controller: 'login', action: 'index')
     }
 
@@ -65,7 +64,7 @@ class LoginController {
                 log.info("Password Successfully Changed for")
                 return user
             } else {
-                log.error("Unable To Change Password")
+                log.error("=======Unable To Change Password=======")
                 user.errors.allErrors.each { println(it) }
                 return null
             }
