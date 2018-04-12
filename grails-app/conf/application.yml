@@ -155,6 +155,6 @@ grails:
           "mail.smtp.quitwait": false
 
 file:
-    uploadLocation: "/home/himanshi/Desktop/Project/GrailsProject/linksharing/grails-app/assets"
+    uploadLocation: "/home/himanshi/Desktop/GrailsProject/linksharing/grails-app/assets"
 
 
