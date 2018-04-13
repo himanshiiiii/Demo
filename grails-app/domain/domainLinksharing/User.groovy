@@ -19,9 +19,8 @@ class User {
     List<ReadingItem> readingItems = []
 
 
-    String getName() {
-        this.name = this.firstname + " " + this.lastname
-        return name
+    String getUsername() {
+        return username
     }
 
     static hasMany = [topics: Topic, subscriptions: Subscription, readingItems: ReadingItem, resources: Resource]

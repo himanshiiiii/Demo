@@ -74,7 +74,7 @@
                     <li class="dropdown  col-lg-3" style="padding: 0px">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user"
                                                                                       style="font-size:24px"></i>
-                            ${session.user.getName()}
+                            ${session.user.getUsername()}
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><g:link controller="user" action="editProfile">Profile</g:link></li>
