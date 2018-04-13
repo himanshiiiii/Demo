@@ -17,7 +17,7 @@ class DocumentResourceController {
         } else {
             DocumentResource documentInstance = new DocumentResource()
             documentInstance.fileName = file.originalFilename
-            documentInstance.filepath = "/home/himanshi/Documents/LinkSharingApp/grails-app/assets/"+ documentInstance.fileName
+            documentInstance.filepath = "/home/himanshi/Desktop/dir/LinkSharing/grails-app/assets/"+ documentInstance.fileName
             documentInstance.createdBy = session.user
             documentInstance.description = params.documentResourceDescription
             Topic newtopic = Topic.findByName(params.topicName)
