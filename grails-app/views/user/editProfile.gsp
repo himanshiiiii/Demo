@@ -222,10 +222,10 @@
                             <input class="form-control" type="text" name="updateLastname" required>
                         </div>
 
-                        <div class="form-group col-lg-10">
-                            <label>Username*</label>
-                            <input class="form-control" type="text" name="updatedUsername" required>
-                        </div>
+                        %{--<div class="form-group col-lg-10">--}%
+                            %{--<label>Username*</label>--}%
+                            %{--<input class="form-control" type="text" name="updatedUsername" required>--}%
+                        %{--</div>--}%
 
                         <div class="col-lg-2"></div>
 

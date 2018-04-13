@@ -50,6 +50,8 @@ class User {
         sort id: 'desc'
         subscriptions fetch: 'join'
         topics fetch: 'join'
+        readingItems fetch: 'join'
+        resources fetch:'join'
     }
 
     static transients = ['name', 'confirmpassword']

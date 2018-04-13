@@ -44,7 +44,7 @@ class UserService {
         User user = User.findByUsername(username)
         user.firstname = userData.updatedFirstname
         user.lastname = userData.updateLastname
-        user.username = userData.updatedUsername
+        user.username = username
         if (userData.updatedPhoto)
             user.photo = userData.updatedPhoto.bytes
         if (user.save(flush: true)) {

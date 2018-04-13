@@ -44,7 +44,7 @@ class TopicController {
             flash.error = "NO SUCH TOPIC IN OUR DATABASE"
             render("NO SUCH TOPIC IN OUR DATABASE")
         } else {
-            proxytopic.discard()
+            //proxytopic.discard()
             proxytopic.delete(flush: true)
             //render("DELETED SUCCESSFULLY")
             redirect(controller: 'user', action: 'index')
